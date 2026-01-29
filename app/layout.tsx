@@ -27,6 +27,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'http://localhost:5174'}/common-nav.css`} />
+        <script type="module" src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'http://localhost:5174'}/common-nav.js`}></script>
+        {/* @ts-ignore */}
+        <engineering-playbook-nav></engineering-playbook-nav>
         {children}
       </body>
     </html>
