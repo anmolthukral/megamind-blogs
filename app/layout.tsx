@@ -34,6 +34,7 @@ export default function RootLayout({
           strategy="afterInteractive"
           type="module"
           src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'https://megamind-nav.vercel.app'}/webcomponent/nav-component.js`}
+          crossOrigin="anonymous"
         />
         {/* @ts-expect-error - custom element defined by the webcomponent script */}
         <engineering-playbook-nav></engineering-playbook-nav>
