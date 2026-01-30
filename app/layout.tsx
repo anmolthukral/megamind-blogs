@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +28,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'http://localhost:5174'}/common-nav.css`} />
-        <script type="module" src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'http://localhost:5174'}/common-nav.js`}></script>
-        {/* @ts-ignore */}
+        <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'https://megamind-nav.vercel.app'}/common-nav.css`} />
+        <Script
+          id="common-nav-webcomponent"
+          strategy="afterInteractive"
+          type="module"
+          src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'https://megamind-nav.vercel.app'}/webcomponent/nav-component.js`}
+        />
+        {/* @ts-expect-error - custom element defined by the webcomponent script */}
         <engineering-playbook-nav></engineering-playbook-nav>
         {children}
       </body>

@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   basePath: '/blogs',
   assetPrefix: '/blogs/',
-trailingSlash: false,
+  trailingSlash: true,
   reactStrictMode: true
 };
 
