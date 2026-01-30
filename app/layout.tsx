@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
+import Link from 'next/link';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,19 @@ export default function RootLayout({
           src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || '/nav'}/common-nav.js`}
           crossOrigin="anonymous"
         />
+        {/* Fallback navigation - will be hidden when the webcomponent loads */}
+        <nav className="navbar" id="fallback-nav">
+          <div className="container">
+            <Link className="logo" href="/">Anmol Thukral</Link>
+            <button className="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul className="nav-links">
+              <li><Link className="nav-link" href="/">Home</Link></li>
+              <li><Link className="nav-link" href="/blogs/">Blogs</Link></li>
+              <li><Link className="nav-link" href="/tutorials/">Tutorials</Link></li>
+              <li><Link className="nav-link" href="/profile/">Profile</Link></li>
+            </ul>
+          </div>
+        </nav>
         {/* @ts-expect-error - custom element defined by the webcomponent script */}
         <engineering-playbook-nav></engineering-playbook-nav>
         {children}
