@@ -43,7 +43,6 @@ export default function RootLayout({
             <Link className="logo" href="/">Anmol Thukral</Link>
             <button className="menu-toggle" aria-label="Toggle navigation">☰</button>
             <ul className="nav-links">
-              <li><Link className="nav-link" href="/">Home</Link></li>
               <li><Link className="nav-link" href="/blogs/">Blogs</Link></li>
               <li><Link className="nav-link" href="/tutorials/">Tutorials</Link></li>
               <li><Link className="nav-link" href="/profile/">Profile</Link></li>

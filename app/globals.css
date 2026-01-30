@@ -40,9 +40,25 @@ h1,h2,h3,h4,h5,h6{ font-family: var(--font-heading); color: var(--text-primary);
 }
 .navbar .container, .fallback-navbar .container { display:flex; justify-content:space-between; align-items:center; width:100%; }
 .logo { font-size:1.25rem; font-weight:700; font-family:var(--font-heading); }
-.nav-links{ display:flex; gap:1.5rem }
-.nav-link{ font-size:0.95rem; font-weight:500; color:var(--text-secondary) }
-.nav-link:hover, .nav-link.active { color:var(--accent-color) }
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+.nav-link:hover, .nav-link.active {
+  color: #071428;
+  background: linear-gradient(90deg, rgba(56,189,248,0.12), rgba(99,102,241,0.06));
+  box-shadow: 0 6px 18px rgba(2,6,23,0.25);
+}
 .menu-toggle { display:none; background:none; border:none; color:var(--text-primary); font-size:1.5rem; cursor:pointer }
 
 /* Hero */
