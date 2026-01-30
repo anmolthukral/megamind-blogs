@@ -28,12 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'https://megamind-nav.vercel.app'}/common-nav.css`} />
+        <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || '/nav'}/common-nav.css`} />
         <Script
           id="common-nav-webcomponent"
           strategy="afterInteractive"
           type="module"
-          src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || 'https://megamind-nav.vercel.app'}/webcomponent/nav-component.js`}
+          src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || '/nav'}/common-nav.js`}
           crossOrigin="anonymous"
         />
         {/* @ts-expect-error - custom element defined by the webcomponent script */}
