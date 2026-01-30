@@ -11,15 +11,15 @@ export function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
 
   // Only consider the bare root path (no trailing slash normalization here).
-  if (url.pathname === "/") {
-    // Replace this host with your blogs project's canonical host if different.
-    const BLOGS_HOST = "megamind-blogs.vercel.app";
+  // if (url.pathname === "/") {
+  //   // Replace this host with your blogs project's canonical host if different.
+  //   const BLOGS_HOST = "megamind-blogs.vercel.app";
 
-    if (host === BLOGS_HOST) {
-      url.pathname = "/blogs";
-      return NextResponse.redirect(url);
-    }
-  }
+  //   if (host === BLOGS_HOST) {
+  //     url.pathname = "/blogs";
+  //     return NextResponse.redirect(url);
+  //   }
+  // }
 
   return NextResponse.next();
 }
