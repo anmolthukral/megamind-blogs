@@ -29,11 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <link rel="stylesheet" href="https://unpkg.com/@knadh/oat/oat.min.css" />
-        <script src="https://unpkg.com/@knadh/oat/oat.min.js" defer></script>
+      <body>
         <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || '/nav'}/common-nav.css`} />
         <Script
           id="common-nav-webcomponent"
