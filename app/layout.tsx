@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
 import Link from 'next/link';
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Engineer Playbook | blogs",
@@ -47,7 +36,7 @@ export default function RootLayout({
             </a>
             <button className="menu-toggle" aria-label="Toggle navigation">☰</button>
             <ul className="nav-links">
-              <li><Link className="nav-link" href="/">Blogs</Link></li>
+              <li><Link className="nav-link active" href="/">Blogs</Link></li>
               <li><a className="nav-link" href="/tutorials">Tutorials</a></li>
               <li><a className="nav-link" href="/profile">Profile</a></li>
               <li><a className="nav-link" href="/tutorials/playground">Playground</a></li>
