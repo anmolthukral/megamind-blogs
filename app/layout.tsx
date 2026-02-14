@@ -28,7 +28,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* Fallback navigation - will be hidden when the webcomponent loads */}
-        <nav className="navbar" id="fallback-nav">
+        <nav className="navbar" id="fallback-nav" data-topnav>
           <div className="container">
             <a className="logo" href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', color: 'inherit' }}>
               <img src="/logo.svg" alt="Engineer Playbook Logo" style={{ height: '32px', width: '32px' }} />
