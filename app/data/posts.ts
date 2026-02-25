@@ -453,5 +453,48 @@ useLayoutEffect(() => {
             <p><strong>Bonus Ninja Tip:</strong> Prioritize CSS solutions (Flexbox, Grid, position: sticky, native transitions) over JavaScript for layout and styling to minimize effect timing problems.</p>
             <p>Master the timing model, respect the paint cycle, and write butter-smooth React UIs. 🥷</p>
     `
+  },
+  {
+    slug: 'introduction-to-claude-code',
+    title: "Introduction to Claude Code: Anthropic's Agentic Coding Tool",
+    date: 'February 25, 2026',
+    description: "A deep dive into Claude Code — Anthropic's agentic coding tool that lives in your terminal and IDE. Learn how to set it up, master commands, and customize your workflow.",
+    content: `
+            <p>Claude Code is fundamentally different from the chat-based AI assistants we've grown accustomed to. While tools like Copilot or ChatGPT provide code completions or snippets in a sidebar, Claude Code is <strong>agentic</strong>. It lives in your terminal and IDE, reads your actual files, runs terminal commands on your behalf, and understands your entire codebase in context.</p>
+
+            <p>Think of it as a senior developer pair-programming with you, 24/7, who can handle an 18,000-line React component without breaking a sweat.</p>
+
+            <h2>1. Installation and Getting Started</h2>
+            <p>Setting up Claude Code is straightforward. Assuming you have Node.js (v18+) and an Anthropic subscription or API key, you can install it globally via npm:</p>
+            <pre><code class="language-bash">npm install -g @anthropic/claude-code</code></pre>
+            <p>Once installed, authenticate your session:</p>
+            <pre><code class="language-bash">claude auth login</code></pre>
+            <p>To start a session, navigate to your project directory and simply type <code>claude</code>. You're now ready to pair-program.</p>
+
+            <h2>2. Mastering Slash Commands</h2>
+            <p>Inside a Claude session, slash commands are your primary control mechanism. Type <code>/</code> at any time to see the full list. Here are the essentials every developer should know:</p>
+            <ul>
+                <li><strong><code>/clear</code>:</strong> The most important command. Use it constantly to clear conversation history when starting a new task. Old context eats tokens and can confuse the model.</li>
+                <li><strong><code>/auto</code>:</strong> Toggles auto-edit mode. Instead of asking permission for every file edit, Claude just does it. This is a massive speed multiplier for iterating on features.</li>
+                <li><strong><code>/think</code>:</strong> Enables extended reasoning. Claude will deeply analyze complex architectural problems or hard bugs before suggesting a solution.</li>
+                <li><strong><code>/teleport</code>:</strong> Seamlessly move your session from the terminal to the web browser or desktop app and back again.</li>
+            </ul>
+
+            <h2>3. The "Secret Weapon": CLAUDE.md</h2>
+            <p>If you want consistent, high-quality results, <code>CLAUDE.md</code> is your best friend. This is a markdown file that Claude reads at the start of <strong>every session automatically</strong>. It acts as a permanent briefing document for your project.</p>
+            <p>You can define your tech stack, coding standards, key commands, and architectural patterns here once, and Claude will respect them forever. No more re-explaining that you use TypeScript and Jest in every new session.</p>
+
+            <h2>4. Model Context Protocol (MCP)</h2>
+            <p>MCP is Claude's bridge to the external world. Through MCP, you can connect Claude to tools like GitHub, Slack, Jira, or even your own custom databases. This allows Claude to not just write code, but also manage issues, create PRs, and query production data directly through natural language.</p>
+
+            <h2>5. Pro Tips for Power Users</h2>
+            <ul>
+                <li><strong>Use <code>@filename</code>:</strong> Reference specific files inline in your prompt for precise context.</li>
+                <li><strong>Direct Shell Access:</strong> Use the <code>!</code> prefix (e.g., <code>!npm run test</code>) to run terminal commands without conversational processing—saving both time and tokens.</li>
+                <li><strong>Git is your safety net:</strong> Don't be afraid of <code>/auto</code> mode. If Claude makes a mistake, your git history is there to revert it instantly.</li>
+            </ul>
+
+            <p>Claude Code represents a shift from <em>coding assistants</em> to <em>coding partners</em>. By investing a little time up front in your <code>CLAUDE.md</code> and mastering the slash commands, you'll find it becomes an indispensable part of your daily workflow.</p>
+    `
   }
 ];

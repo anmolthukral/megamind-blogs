@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div style={{ minHeight: '100vh', padding: 'var(--space-6) 0' }}>
       <div className="container">
-        <div className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
+        <div className="text-center" style={{ marginBottom: 'var(--space-18)' }}>
           <h1>Engineering Blog</h1>
           <p className="text-light text-xl">
             Deep dives into React, Frontend Performance, and Modern Web Development.
