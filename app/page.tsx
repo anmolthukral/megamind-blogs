@@ -3,7 +3,7 @@ import { posts } from './data/posts';
 
 export default function Home() {
   return (
-    <div style={{ minHeight: '100vh', padding: 'var(--space-6) 0' }}>
+    <div style={{ minHeight: '100vh', padding: 'var(--space-20) 0' }}>
       <div className="container">
         <div className="text-center" style={{ marginBottom: 'var(--space-18)' }}>
           <h1>Engineering Blog</h1>
