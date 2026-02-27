@@ -19,6 +19,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-19GSDP6BS8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-19GSDP6BS8');
+          `}
+        </Script>
         <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || '/nav'}/common-nav.css`} />
         <Script
           id="common-nav-webcomponent"
