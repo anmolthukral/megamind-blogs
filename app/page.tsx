@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { posts } from './data/posts';
+import { getPosts } from './data/posts';
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPosts();
   return (
     <div style={{ minHeight: '100vh', padding: 'var(--space-20) 0' }}>
       <div className="container">

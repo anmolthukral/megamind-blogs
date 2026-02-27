@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
-import { posts } from '../data/posts';
+import { getPostBySlug, getAllPosts } from '../../lib/markdown';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
+  const posts = await getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -10,7 +11,12 @@ export async function generateStaticParams() {
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
+  let post;
+  try {
+    post = await getPostBySlug(slug);
+  } catch (e) {
+    notFound();
+  }
 
   if (!post) {
     notFound();
@@ -44,9 +50,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
-  
-  if (!post) {
+  let post;
+  try {
+    post = await getPostBySlug(slug);
+  } catch (e) {
     return {
       title: 'Post Not Found'
     };
