@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from 'next/script';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Engineer Playbook | blogs",
@@ -41,22 +40,6 @@ export default function RootLayout({
           src={`${process.env.NEXT_PUBLIC_COMMON_NAV_URL || '/nav'}/common-nav.js`}
           crossOrigin="anonymous"
         />
-        {/* Fallback navigation - will be hidden when the webcomponent loads */}
-        <nav className="navbar" id="fallback-nav" data-topnav>
-          <div className="container">
-            <a className="logo" href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', color: 'inherit' }}>
-              <img src="/logo.svg" alt="Engineer Playbook Logo" style={{ height: '32px', width: '32px' }} />
-              Engineer Playbook
-            </a>
-            <button className="menu-toggle" aria-label="Toggle navigation">☰</button>
-            <ul className="nav-links">
-              <li><Link className="nav-link active" href="/">Blogs</Link></li>
-              <li><a className="nav-link" href="/tutorials">Tutorials</a></li>
-              <li><a className="nav-link" href="/profile">Team</a></li>
-              <li><a className="nav-link" href="/tutorials/playground">Playground</a></li>
-            </ul>
-          </div>
-        </nav>
         {/* @ts-expect-error - custom element defined by the webcomponent script */}
         <engineering-playbook-nav></engineering-playbook-nav>
         {children}
