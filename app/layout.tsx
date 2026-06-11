@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import '@engineerplaybook/design-system/dist/style.css';
 import "./globals.css";
 import Script from 'next/script';
 
